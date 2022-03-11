@@ -10,6 +10,11 @@ Anhand der Analyse wurde folgendes Lösungsdesign entworfen.
 Skript 1: User create skript
 
         vagrant@vagrant:~$ ./usercreate.sh NAME_OF_FILE.txt
+        
+        
+Skript 2: Backup create skript
+
+        vagrant@vagrant:~$ ./backupcreate.sh NAME_OF_FILE RELATIVE_PATH_TO_DIRECTORY
 
 ### Ablauf der Automation
 
