@@ -8,10 +8,16 @@ Anhand der Analyse wurde folgendes Lösungsdesign entworfen.
 ### Aufruf der Skripte
 
 TODO: schreiben sie wie die Skripte aufgerufen werden sollen (d.h. welche Parameter werden übergeben, gibt es Interaktionen mit dem Skript, läuft es automatisch täglich ab?)
+Skript 1: User create skript
+    """
+     vagrant@vagrant:~$ ./usercreate.sh NAME_OF_FILE.txt
+    """
 
 ### Ablauf der Automation
 
 TODO: Hier kommt ihr UML-Activity Diagramm
+Skript 1: User create skript
+
 
 ### Konfigurationsdateien
 
