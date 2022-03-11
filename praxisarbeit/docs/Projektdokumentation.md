@@ -14,7 +14,7 @@ Skript 1: User create skript
         
 Skript 2: Backup create skript
 
-        vagrant@vagrant:~$ ./backupcreate.sh NAME_OF_FILE RELATIVE_PATH_TO_DIRECTORY
+        vagrant@vagrant:~$ ./backupcreate.sh
 
 ### Ablauf der Automation
 
@@ -30,7 +30,12 @@ Skript 2: Backup create skript
 
 TODO: Definieren sie welche Parameter in welchen Konfigurationsdateien gespeichert werden.
 
-Skript 2: Im config-file sind pro Zeile Groupnames definiert, welche im Skript verwendet werden
+Skript 2: 
+
+Groupname-Config: Im config-file sind pro Zeile Groupnames definiert, welche im Skript verwendet werden
+
+Settings-Config: in diesem config-file sind filename, directory, time-of-delete und anzahl archives definiert
+
 
 ## Abgrenzungen zum Lösungsdesign
 
