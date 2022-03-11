@@ -24,6 +24,7 @@ Skript 2: Backup create skript
 ### Konfigurationsdateien
 
 TODO: Definieren sie welche Parameter in welchen Konfigurationsdateien gespeichert werden.
+
 Skript 2: Im config-file sind pro Zeile Groupnames definiert, welche im Skript verwendet werden
 
 ## Abgrenzungen zum Lösungsdesign
