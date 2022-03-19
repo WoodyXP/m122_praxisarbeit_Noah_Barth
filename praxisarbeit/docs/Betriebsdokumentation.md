@@ -108,7 +108,7 @@ Um das Skript aufzurufen muss man im Folder "bin" sein, danache kann man mit:
 
 Das Skript ausführen.
 
-Der Speicherort von Inputfile ist hier egal.
+Der Speicherort von Inputfile muss im gleichen Ordner sein wie das File.
 
 Ein anderes File das wir brauchen ist das Backupfile für die Gruppen. In diesem
 File muss man die Gruppen definieren, die ein Backup haben.
@@ -122,3 +122,7 @@ Auch hier können Sie ein vorgeschriebenes File names groupbackupfile benützten
 Vergessen Sie nicht, dass dieses File im gleichen Ordner wie der createuser.sh skript sein muss, das kann man mit diesem Command mache:
 
       mv groupbackupfile /PFAD_ZUM_GIT_REPO/m122_pracisarbeit_Noah_Barth/prazisarbeit/bin
+
+Das gleiche auch, fals Sie das userlist_example.csv benützten.
+
+      mv userlist_example.csv /PFAD_ZUM_GIT_REPO/m122_pracisarbeit_Noah_Barth/prazisarbeit/bin
