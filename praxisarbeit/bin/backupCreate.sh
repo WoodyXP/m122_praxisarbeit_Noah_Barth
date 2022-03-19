@@ -5,7 +5,10 @@ cd $cwd
 BASENAME=$(basename 0$)
 TMPDIR=/tmp/$BAENAME.$$
 
+. /logfunction.sh
 source ../etc/backupCreate.env
+
+
 
 #create file to write in users
 touch users.txt;
@@ -14,12 +17,16 @@ cat $ETCDIR/groupnames.env|grep -v '^$'|grep -v '^#'|while read groupname
 do
 #check if group exists
   if [ $(getent group $groupname) ]; then
+    LOGLEVEL=I
     #grab all users of group and write them in variable (format is: user1,user2 etc)
     gid="$(getent group "$groupname" | cut -d: -f4)"
     #write variable in file
     echo "$gid" >> users.txt;
+    LOG I fetched all users from group $groupname
   else
+    LOGLEVEL=W
     echo "group $groupname does not exist."
+    LOG W group $groupname does not exist
   fi
 done
 
@@ -38,7 +45,9 @@ do
     #fetch user-home-directory
     awk -F: -v username=$user '$1==username {print $6}' /etc/passwd >> directoryList.txt
   else
+    LOGLEVEL=W
     echo "no /home/$user directory";
+    LOG W no /home/$user directory
   fi
 done
 rm -r userList.txt;
@@ -49,3 +58,5 @@ tar -cvf $TARGET_DIRECTORY/$filename.tar -T directoryList.txt
 rm -r directoryList.txt;
 #remove archives older than x days. Only works in combination with crone-job
 find $TARGET_DIRECTORY -type f -mtime +$DATE_TILL_DELETE -name '*.tar' -execdir rm -- '{}' \;
+LOGLEVEL=I
+LOG I Finished creating archive
