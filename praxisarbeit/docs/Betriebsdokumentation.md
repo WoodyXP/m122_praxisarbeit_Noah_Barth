@@ -8,15 +8,19 @@ TODO: In 2-3 Sätzen beschreiben was die Skripte grundsaetzlich tun.
 
 Mit Hilfe von dem usercreate skript kann man ganz einfach mit einem externen CSV file neue users und gruppen erstellen.
 
+#### Skript 2: Backup create skript
+
+Mit dem backupCreate-Skript kann man über eine List von Usergroups in einem CSV file gewisse User-Directories archivieren.
+
 ## Installationsanleitung für Administratoren
 
 ### Installation
 
 TODO: Wie ist das Skript zu installieren. (z.B. apt-get install ... oder tar xvf .... oder ...)
 
-#### Skript 1: User create skript
+#### Skript 1 $ Skript 2: User create skript & Backup create skript
 
-Da das Skript in diesem Repo liegt kann man das Ganze leicht mit einem 
+Da die Skripts in diesem Repo liegen kann man diese das Ganze leicht mit einem 
         
     git clone https://github.com/WoodyXP/m122_praxisarbeit_Noah_Barth.git
 
