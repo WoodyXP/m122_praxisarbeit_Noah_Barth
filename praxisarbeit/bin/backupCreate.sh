@@ -5,7 +5,7 @@ cd $cwd
 BASENAME=$(basename 0$)
 TMPDIR=/tmp/$BAENAME.$$
 
-. /logfunction.sh
+. /logfunctionbackup.sh
 source ../etc/backupCreate.env
 
 
