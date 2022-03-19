@@ -5,7 +5,7 @@ do
                 f) filename="${OPTARG}" ;;
         esac
 done
-. /etc/logfunction.sh
+. /logfunction.sh
 
 grep -v '^#'|grep -v '^$'|while read username groupname name_firstname
 do
