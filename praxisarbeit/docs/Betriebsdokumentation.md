@@ -18,7 +18,7 @@ Mit dem backupCreate-Skript kann man über eine List von Usergroups in einem CSV
 
 TODO: Wie ist das Skript zu installieren. (z.B. apt-get install ... oder tar xvf .... oder ...)
 
-#### Skript 1 $ Skript 2: User create skript & Backup create skript
+#### Skript 1 & Skript 2: User create skript & Backup create skript
 
 Da die Skripts in diesem Repo liegen kann man diese das Ganze leicht mit einem 
         
@@ -64,6 +64,24 @@ Es hat auch im Folder bin ein File namens setup.sh, dieses File macht alles hier
         sudo mkdir -p tmpdir/{Documents/sources/{includes,docs},Repo,tags}
         cd hr
         sudo mkdir -p tmpdir/{Documents/sources/{includes,docs},Repo,tags}
+        
+#### Skript 2: Backup create skript
+
+Das BackupCreate-Skript benötigt nur 2 externe files. Diese muss man im verzeichnis etc hinterlegen. Wenn man einen anderen Standord will, so muss man diesen im Skript Anpassen. 
+
+Innerhalb des BackupCreate.env-files muss man den Namen des Backups, dessen Standord und den Standord der Gruppen-Liste definieren. Auch muss man angeben, nach wie vielen Tagen das Backup wieder gelöscht wird. Dies funktioniert jedoch nur in Kombination mit einem Daily-Cronjob.
+        
+        NAME=TestBackup
+        TARGET_DIRECTORY=backup
+        DATE_TILL_DELETE=10
+        ETCDIR=../etc
+        
+Die Gruppenliste soll dieses Format haben:
+        
+        dev
+        res
+        hr
+-----------------------------------------------------------------------------------------
 
 Damit wirklich alles funktioniert wäre es gut den Skripten auch alle Rechte zu gebeb
 
@@ -89,7 +107,7 @@ TODO: beschreiben des Scriptaufruf
 
 TODO: beschreiben der erzeugt files (falls solche erzeugt werden)
 
-TODO: Lokation von logfiles und bekannte Fehlermeldungen beschreiben.
+TODO: Location von logfiles und bekannte Fehlermeldungen beschreiben.
 
 #### Skript 1: User create skript
     
@@ -130,3 +148,13 @@ Vergessen Sie nicht, dass dieses File im gleichen Ordner wie der createuser.sh s
 Das gleiche auch, fals Sie das userlist_example.csv benützten.
 
       mv userlist_example.csv /PFAD_ZUM_GIT_REPO/m122_pracisarbeit_Noah_Barth/prazisarbeit/bin
+
+#### Skript 2: Backup create skript
+
+Skript 2 kann ganz einfach ohne parameter in der Konsole aufgerufen werden:
+
+        ./backupCreate.sh
+        
+Die notwendigen Konfigurationen sind, wie bereits erwähnt, extern definiert. Innerhalb dieser Angaben findet sich auch der Standord des nun neu Erstellten Tar-Archives. Das Archiv enthält die Benutzer-Verzeichnisse aller User der angegebenen Groups.
+
+Dabei soll noch angemerkt werden das nicht existierende Gruppen/Userverzeichnisse ignoriert und als echo ausgegeben werden
